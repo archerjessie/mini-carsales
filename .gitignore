@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+*.suo
+Carsales.VehicleManagementSystem/.vs/Carsales.VehicleManagementSystem/DesignTimeBuild/
+Carsales.VehicleManagementSystem/.vs/Carsales.VehicleManagementSystem/v16/TestStore/
+*.user
+Carsales.VehicleManagementSystem/**/bin/
+Carsales.VehicleManagementSystem/**/obj/**
