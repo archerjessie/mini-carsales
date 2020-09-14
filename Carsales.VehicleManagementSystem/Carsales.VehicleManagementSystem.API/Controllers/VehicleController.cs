@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Carsales.VehicleManagementSystem.Domain.Models;
+﻿using Carsales.VehicleManagementSystem.Domain.Models;
 using Carsales.VehicleManagementSystem.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Carsales.VehicleManagementSystem.API.Controllers
 {
     [Route("api/[controller]")]
@@ -29,13 +24,18 @@ namespace Carsales.VehicleManagementSystem.API.Controllers
         }
 
         [HttpPost("car")]
-        public IActionResult CreateCar([FromBody]Car car)
+        public IActionResult CreateCar([FromBody] Car car)
         {
-            if (string.IsNullOrEmpty(car.Make) || string.IsNullOrEmpty(car.Model) || car.Doors<=0 || car.Wheels <=0)
+            if (
+                string.IsNullOrEmpty(car.Make) ||
+                string.IsNullOrEmpty(car.Model) ||
+                car.Doors <= 0 ||
+                car.Wheels <= 0
+            )
             {
                 return BadRequest("Required information missing.");
             }
-            
+
             bool result = _vehicleService.CreateVehicle(car);
             return Ok(result);
         }

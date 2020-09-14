@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Carsales.VehicleManagementSystem.Domain.Repositories;
+﻿using Carsales.VehicleManagementSystem.Domain.Repositories;
 using Carsales.VehicleManagementSystem.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace Carsales.VehicleManagementSystem.API
 {
@@ -26,10 +20,27 @@ namespace Carsales.VehicleManagementSystem.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services
+                .AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services
+                .AddCors(c =>
+                {
+                    c
+                        .AddPolicy("AllowOrigin",
+                        options =>
+                            options
+                                .AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader());
+                });
 
             services.AddSingleton<IVehicleRepository>(new VehicleRepository());
-            services.AddScoped<IVehicleService>(provider => new VehicleService(provider.GetService<IVehicleRepository>()));
+            services
+                .AddScoped<IVehicleService>(provider =>
+                    new VehicleService(provider
+                            .GetService<IVehicleRepository>()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +50,10 @@ namespace Carsales.VehicleManagementSystem.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app
+                .UseCors(options =>
+                    options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseMvc();
         }

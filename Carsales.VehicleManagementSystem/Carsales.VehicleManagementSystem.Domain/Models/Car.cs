@@ -2,7 +2,15 @@
 {
     public class Car : VehicleBase
     {
-        public Car(string make, string model, string engine, short doors, short wheels, string bodyType) : base(make, model)
+        public Car(
+            string make,
+            string model,
+            string engine,
+            short doors,
+            short wheels,
+            string bodyType
+        ) :
+            base(make, model)
         {
             Engine = engine;
             Doors = doors;
@@ -12,9 +20,12 @@
 
         public override EVehicleType VehicleType => EVehicleType.Car;
 
-        public string Engine { get; set; }
-        public short Doors { get; set; }
-        public short Wheels { get; set; }
-        public string BodyType { get; set; }
+        public string Engine { get; private set; }
+
+        public short Doors { get; private set; }
+
+        public short Wheels { get; private set; }
+
+        public string BodyType { get; private set; }
     }
 }

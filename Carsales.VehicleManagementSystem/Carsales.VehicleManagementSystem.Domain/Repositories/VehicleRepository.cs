@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Carsales.VehicleManagementSystem.Domain.Models;
 
 namespace Carsales.VehicleManagementSystem.Domain.Repositories
 {
     public class VehicleRepository : IVehicleRepository
     {
-        private readonly IList<VehicleBase> _vehicleList = new List<VehicleBase>();
+        private readonly IList<VehicleBase>
+            _vehicleList = new List<VehicleBase>();
 
         public bool CreateVehicle(VehicleBase vehicle)
         {
             vehicle.Id = _vehicleList.Count() + 1;
 
-            _vehicleList.Add(vehicle);
+            _vehicleList.Add (vehicle);
             return true;
         }
 
