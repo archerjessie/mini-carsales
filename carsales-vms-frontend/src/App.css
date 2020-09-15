@@ -1,0 +1,14 @@
+section {
+    border-style: double;
+    min-width: fit-content;
+    margin: 40px;
+    padding: 20px;
+}
+
+footer {
+    position: static;
+    padding: 50px;
+}
+.custom-select {
+    width: 80%;
+}
