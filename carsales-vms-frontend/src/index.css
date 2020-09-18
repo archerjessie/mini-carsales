@@ -5,7 +5,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: rgb(182, 176, 176);
+  background-color: rgb(247, 231, 201);
+}
+h2,
+h3 {
+  color: grey;
 }
 
 code {

@@ -109,3 +109,6 @@ Carsales.VehicleManagementSystem/.vs/Carsales.VehicleManagementSystem/v16/
 Carsales.VehicleManagementSystem/**/bin
 **/obj/**
 .vscode
+UserPrefs.xml
+*.API-Debug.json
+**/.vs/**

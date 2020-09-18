@@ -15,17 +15,18 @@ const VehicleList = (props) => (
       </tr>
     </thead>
     <tbody>
-      {props.vehicles.map((vehicle) => (
-        <tr key={vehicle.id}>
-          <td>{vehicle.id}</td>
-          <td>{vehicle.make}</td>
-          <td>{vehicle.model}</td>
-          <td>{vehicle.engine}</td>
-          <td>{vehicle.doors}</td>
-          <td>{vehicle.wheels}</td>
-          <td>{vehicle.bodyType}</td>
-        </tr>
-      ))}
+      {!props.vehicles ??
+        props.vehicles.map((vehicle) => (
+          <tr key={vehicle.id}>
+            <td>{vehicle.id}</td>
+            <td>{vehicle.make}</td>
+            <td>{vehicle.model}</td>
+            <td>{vehicle.engine}</td>
+            <td>{vehicle.doors}</td>
+            <td>{vehicle.wheels}</td>
+            <td>{vehicle.bodyType}</td>
+          </tr>
+        ))}
     </tbody>
   </table>
 )
