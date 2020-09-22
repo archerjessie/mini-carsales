@@ -21,7 +21,7 @@ namespace Carsales.VehicleManagementSystem.Domain.Test
         }
 
         [Fact]
-        public void GetAllVehicles_ReturnsEmptyCollection()
+        public void GetAllVehicles_CallsRepository()
         {
             _service.GetAllVehicles();
 
@@ -29,7 +29,7 @@ namespace Carsales.VehicleManagementSystem.Domain.Test
         }
 
         [Fact]
-        public void CreateVehicle_ReturnsTrue()
+        public void CreateVehicle_CallsRepository()
         {
             Car carOne = new Car("toyota","model","engine",4,4,"");
 
