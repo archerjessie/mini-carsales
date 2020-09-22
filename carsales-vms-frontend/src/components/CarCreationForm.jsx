@@ -144,7 +144,7 @@ const CarCreationForm = (props) => {
   )
 }
 
-CarCreationForm.prototype = {
+CarCreationForm.propTypes = {
   createCar: PropTypes.func.isRequired,
 }
 

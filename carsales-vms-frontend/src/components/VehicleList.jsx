@@ -15,7 +15,7 @@ const VehicleList = (props) => (
       </tr>
     </thead>
     <tbody>
-      {!props.vehicles ??
+      {props.vehicles &&
         props.vehicles.map((vehicle) => (
           <tr key={vehicle.id}>
             <td>{vehicle.id}</td>
@@ -31,7 +31,7 @@ const VehicleList = (props) => (
   </table>
 )
 
-VehicleList.prototype = {
+VehicleList.propTypes = {
   vehicles: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
