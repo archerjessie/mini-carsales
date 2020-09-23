@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "npm run start:dev",
-    "start:dev": "cross-env VEHICLE_API_URL=http://localhost:5000 react-scripts start",
+    "start:dev": "cross-env REACT_APP_API_URL=http://localhost:5000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
