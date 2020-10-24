@@ -7,12 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.1" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Carsales.VehicleManagementSystem.Domain\Carsales.VehicleManagementSystem.Domain.csproj" />
+    <ProjectReference Include="..\Carsales.VehicleManagementSystem.Data\Carsales.VehicleManagementSystem.Data.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
-﻿namespace Carsales.VehicleManagementSystem.Domain.Models
+﻿using Carsales.VehicleManagementSystem.Data.DbEntities;
+
+namespace Carsales.VehicleManagementSystem.Domain.Models
 {
     public abstract class VehicleBase
     {

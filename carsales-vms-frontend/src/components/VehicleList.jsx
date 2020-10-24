@@ -39,7 +39,7 @@ VehicleList.propTypes = {
       model: PropTypes.string.isRequired,
       engine: PropTypes.string.isRequired,
       doors: PropTypes.number.isRequired,
-      wheels: PropTypes.string.isRequired,
+      wheels: PropTypes.number.isRequired,
       bodyType: PropTypes.string.isRequired,
     }),
   ),

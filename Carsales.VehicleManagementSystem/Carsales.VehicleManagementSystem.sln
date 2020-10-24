@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carsales.VehicleManagementS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carsales.VehicleManagementSystem.API.Test", "Carsales.VehicleManagementSystem.API.Test\Carsales.VehicleManagementSystem.API.Test.csproj", "{CB624C2A-C94E-4BAC-A5D1-543887F8FF49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carsales.VehicleManagementSystem.Data", "Carsales.VehicleManagementSystem.Data\Carsales.VehicleManagementSystem.Data.csproj", "{589A51B1-392F-4A12-ACE7-51DC18EFB70C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CB624C2A-C94E-4BAC-A5D1-543887F8FF49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB624C2A-C94E-4BAC-A5D1-543887F8FF49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB624C2A-C94E-4BAC-A5D1-543887F8FF49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{589A51B1-392F-4A12-ACE7-51DC18EFB70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{589A51B1-392F-4A12-ACE7-51DC18EFB70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{589A51B1-392F-4A12-ACE7-51DC18EFB70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{589A51B1-392F-4A12-ACE7-51DC18EFB70C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
