@@ -10,7 +10,7 @@ namespace Carsales.VehicleManagementSystem.Data
         {
         }
 
-        public VehicleContext(){}
+        //public VehicleContext(){}
 
         public DbSet<VehicleDb> Vehicles { get; set; }
 
@@ -19,7 +19,7 @@ namespace Carsales.VehicleManagementSystem.Data
             modelBuilder.Entity<VehicleDb>().ToTable("Vehicle");
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseNpgsql("User ID=postgres;Password=password;Server=localhost;Port=5433;Database=VMS;Integrated Security=true;Pooling=true;");
+        //protected override void OnConfiguring(DbContextOptionsBuilder options)
+        //    => options.UseNpgsql("User ID=postgres;Password=mysecretpassword;Server=localhost;Port=5433;Database=VMS;Integrated Security=true;Pooling=true;");
     }
 }
