@@ -7,4 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Carsales.VehicleManagementSystem.Data\Carsales.VehicleManagementSystem.Data.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Transformers\" />
+  </ItemGroup>
 </Project>

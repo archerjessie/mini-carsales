@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Folder Include="DbEntities\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1">

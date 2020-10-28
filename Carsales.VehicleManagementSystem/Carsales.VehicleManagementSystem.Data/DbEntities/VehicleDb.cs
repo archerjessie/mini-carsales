@@ -18,6 +18,8 @@ namespace Carsales.VehicleManagementSystem.Data.DbEntities
         public short Wheels { get; set; }
 
         public string BodyType { get; set; }
+        public double Length { get; set; }
+        public string Name { get; set; }
 
         public VehicleDb()
         {

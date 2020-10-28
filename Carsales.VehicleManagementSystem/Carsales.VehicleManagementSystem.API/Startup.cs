@@ -1,5 +1,5 @@
 ﻿using Carsales.VehicleManagementSystem.Data;
-using Carsales.VehicleManagementSystem.Domain.Repositories;
+using Carsales.VehicleManagementSystem.Data.Repositories;
 using Carsales.VehicleManagementSystem.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,7 +42,7 @@ namespace Carsales.VehicleManagementSystem.API
                                 .AllowAnyHeader());
                 });
 
-            services.AddSingleton<IVehicleRepository>(new VehicleRepository());
+            services.AddScoped<IVehicleRepository>(provider => new VehicleRepository(provider.GetService< VehicleContext > ()));
             services
                 .AddScoped<IVehicleService>(provider =>
                     new VehicleService(provider
@@ -59,7 +59,12 @@ namespace Carsales.VehicleManagementSystem.API
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/error-local-development");
+            }
+            else
+            {
+                app.UseExceptionHandler("/error");
+                app.UseHsts();
             }
 
             app
