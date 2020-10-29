@@ -24,97 +24,94 @@ namespace Carsales.VehicleManagementSystem.API.Controllers
             var result = _vehicleService.GetAllVehicles();
             return Ok(result);
         }
-        [HttpGet ("{id}")]
-        public IActionResult GetVehicleById(int id)
-        {
-            var result = _vehicleService.GetVehicleById(id);
-            if(result==null)
-            {
-                return NotFound("VehicleId is not found");
-            }
+
+      //  [HttpGet ("{id}")]
+      //  public IActionResult GetVehicleById(int id)
+      //  {
+      //      var result = _vehicleService.GetVehicleById(id);
+      //      if(result==null)
+      //      {
+      //          return NotFound("VehicleId is not found");
+      //      }
             
-            return Ok(result);
-        }
+      //      return Ok(result);
+      //  }
 
-        [HttpGet("type/{type}")]
-        public IActionResult GetVehicleByType(string type)
-        {
-            EVehicleType enumType;
-            if (!Enum.TryParse(type, out enumType))
-                return BadRequest("invalid vehicle type");
+      //  [HttpGet("type/{type}")]
+      //  public IActionResult GetVehicleByType(string type)
+      //  {
+      //      EVehicleType enumType;
+      //      if (!Enum.TryParse(type, out enumType))
+      //          return BadRequest("invalid vehicle type");
             
-                var result = _vehicleService.GetVehicleByType(enumType);
-                if (result == null)
-                {
-                    return NotFound("VehicleType is not found");
-                }
+      //      var result = _vehicleService.GetVehicleByType(enumType);
+      //      if (result == null)
+      //      {
+      //          return NotFound("VehicleType is not found");
+      //      }
 
-                return Ok(result);
-            
-                
-        }
+      //      return Ok(result);
+      //  }
 
-        [HttpPost("car")]
-        public IActionResult CreateCar([FromBody] Car car)
-        {
-            if (
-                string.IsNullOrEmpty(car.Make) ||
-                string.IsNullOrEmpty(car.Model) ||
-                car.Doors <= 0 ||
-                car.Wheels <= 0
-            )
-            {
-                return BadRequest("Required information missing.");
-            }
+      //  [HttpPost("car")]
+      //  public IActionResult CreateCar([FromBody] Car car)
+      //  {
+      //      if (
+      //          string.IsNullOrEmpty(car.Make) ||
+      //          string.IsNullOrEmpty(car.Model) ||
+      //          car.Doors <= 0 ||
+      //          car.Wheels <= 0
+      //      )
+      //      {
+      //          return BadRequest("Required information missing.");
+      //      }
 
-            _vehicleService.CreateVehicle(car);
-            return Ok();
-        }
+      //      _vehicleService.CreateVehicle(car);
+      //      return Ok();
+      //  }
 
-        [HttpPost("boat")]
-        public IActionResult CreateBoat([FromBody] Boat boat)
-        {
-            if (
-          string.IsNullOrEmpty(boat.Make) ||
-          string.IsNullOrEmpty(boat.Model) ||
-          boat.Length <= 0 
+      //  [HttpPost("boat")]
+      //  public IActionResult CreateBoat([FromBody] Boat boat)
+      //  {
+      //      if (
+      //    string.IsNullOrEmpty(boat.Make) ||
+      //    string.IsNullOrEmpty(boat.Model) ||
+      //    boat.Length <= 0 
           
-      )
-            {
-                return BadRequest("Required information missing.");
-            }
+      //)
+      //      {
+      //          return BadRequest("Required information missing.");
+      //      }
 
-            _vehicleService.CreateVehicle(boat);
-            return Ok();
-        }
+      //      _vehicleService.CreateVehicle(boat);
+      //      return Ok();
+      //  }
 
-        [HttpPut("boat-{id}")]
-        public IActionResult UpdateBoat([FromBody] Boat boat,int id)
-        {
-            if (string.IsNullOrEmpty(boat.Make) ||
-                    string.IsNullOrEmpty(boat.Model) || boat.Length <= 0)
-            {
-                return BadRequest("Required information missing.");
-            }
+      //  [HttpPut("boat-{id}")]
+      //  public IActionResult UpdateBoat([FromBody] Boat boat,int id)
+      //  {
+      //      if (string.IsNullOrEmpty(boat.Make) ||
+      //              string.IsNullOrEmpty(boat.Model) || boat.Length <= 0)
+      //      {
+      //          return BadRequest("Required information missing.");
+      //      }
 
-            if(boat.Id != id)
-            {
-                return BadRequest("The Id is invalid");
-            }
+      //      if(boat.Id != id)
+      //      {
+      //          return BadRequest("The Id is invalid");
+      //      }
 
-            _vehicleService.UpdateBoatById(boat,id);
-            return Ok();
-        }
+      //      _vehicleService.UpdateBoatById(boat,id);
+      //      return Ok();
+      //  }
 
-        [HttpDelete("{id}")]
-        public IActionResult DeleteVehicleById(int id)
-        {
+      //  [HttpDelete("{id}")]
+      //  public IActionResult DeleteVehicleById(int id)
+      //  {
 
-            _vehicleService.DeleteVehicleById(id);
+      //      _vehicleService.DeleteVehicleById(id);
           
-            return Ok();
-        }
-
-
+      //      return Ok();
+      //  }
     }
 }
